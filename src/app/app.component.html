@@ -1,4 +1,27 @@
-<h1>
-  Welcome to {{ title }}!
-</h1>
-<router-outlet></router-outlet>
+<mat-toolbar>
+  <span>Users Demo</span>
+</mat-toolbar>
+<mat-drawer-container class="c-drawer-container">
+  <mat-drawer mode="side" opened>
+    <mat-list>
+      <mat-list-item>
+        <a class="c-drawer__link" href="https://github.com/alexiscv55/users-demo" target="_blank">
+          Source Code
+        </a>
+      </mat-list-item>
+      <mat-list-item>
+        <a class="c-drawer__link" href="https://my-json-server.typicode.com/alexiscv55/users-mock" target="_blank">
+          Mocked API
+        </a>
+      </mat-list-item>
+      <mat-list-item>
+        <a class="c-drawer__link" href="https://raw.githubusercontent.com/alexiscv55/users-mock/master/users-mock.postman_collection.json" target="_blank">
+          Postman Collection
+        </a>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content class="c-drawer-content">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

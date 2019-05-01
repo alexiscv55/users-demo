@@ -1,0 +1,36 @@
+@import '~@angular/material/theming';
+
+$primary: mat-palette($mat-pink);
+
+:host {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.c-drawer-container {
+  flex-grow: 1;
+}
+
+.c-drawer-content {
+  padding: 1.5rem;
+}
+
+.c-drawer__link {
+  color: mat-color($primary);
+  text-decoration: none;
+
+  &:hover {
+    color: mat-color($primary);
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: mat-color($primary);
+  }
+
+  &:active {
+    color: mat-color($primary, darker);
+    text-decoration: underline;
+  }
+}
