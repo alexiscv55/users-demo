@@ -7,6 +7,7 @@ import { UsersComponent } from './users.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonModule } from '@angular/material/button';
 import { PipesModule } from 'src/app/shared/pipes/pipes.module';
+import { MatIconModule, MatDialogModule, MatSnackBarModule } from '@angular/material';
 
 @NgModule({
   declarations: [UsersComponent],
@@ -15,6 +16,9 @@ import { PipesModule } from 'src/app/shared/pipes/pipes.module';
     UsersRoutingModule,
     MatExpansionModule,
     MatButtonModule,
+    MatIconModule,
+    MatDialogModule,
+    MatSnackBarModule,
     PipesModule
   ],
   providers: [ ]

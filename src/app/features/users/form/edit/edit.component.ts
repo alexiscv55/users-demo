@@ -39,7 +39,7 @@ export class EditComponent implements OnInit {
       this.usersService.createUser(this.userForm.form.value).subscribe(
         res => {
          this.snackBar.open(`Successfully updated`, 'Ok', { duration: 10000, panelClass: 'success-snackbar' });
-         this.router.navigate(['../../']);
+         this.router.navigate(['../../../']);
         },
         err => this.snackBar.open(`There's been an error`, 'Ok', { duration: 10000, panelClass: 'error-snackbar' })
       );
