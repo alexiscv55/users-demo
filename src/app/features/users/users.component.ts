@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class UsersComponent {
 
-  protected users$ = this.usersService.getUsers();
+  users$ = this.usersService.getUsers();
 
   private dialogRef: MatDialogRef<any, any>;
 

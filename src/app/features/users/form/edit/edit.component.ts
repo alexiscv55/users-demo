@@ -13,7 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class EditComponent implements OnInit {
 
-  protected user: User;
+  user: User;
 
   @ViewChild(FormComponent) userForm: FormComponent;
 

@@ -11,7 +11,7 @@ import { User } from 'src/app/shared/models/user.model';
 })
 export class FormComponent implements OnInit {
 
-  protected states = STATES;
+  states = STATES;
 
   public form = new FormGroup({
     name: new FormControl(null, [Validators.required]),
