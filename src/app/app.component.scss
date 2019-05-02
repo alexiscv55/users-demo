@@ -8,15 +8,15 @@ $primary: mat-palette($mat-pink);
   height: 100%;
 }
 
-.c-drawer-container {
+.c-sidenav-container {
   flex-grow: 1;
 }
 
-.c-drawer-content {
+.c-sidenav-content {
   padding: 1.5rem;
 }
 
-.c-drawer__link {
+.c-sidenav__link {
   color: mat-color($primary);
   text-decoration: none;
 

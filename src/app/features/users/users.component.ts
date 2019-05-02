@@ -1,19 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { UsersService } from 'src/app/shared/service/users.service';
+import { Component } from '@angular/core';
+import { UsersService } from 'src/app/shared/services/users.service';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })
-export class UsersComponent implements OnInit {
+export class UsersComponent {
 
-  protected users;
+  protected users = this.usersService.getUsers();
 
-  constructor(private usersService: UsersService) { }
-
-  ngOnInit() {
-    this.users = this.usersService.getUsers();
-  }
+  constructor(private readonly usersService: UsersService) { }
 
 }

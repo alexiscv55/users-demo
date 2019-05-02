@@ -1,27 +1,30 @@
-<mat-toolbar>
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon aria-label="Toogle sidenav">menu</mat-icon>
+  </button>
   <span>Users Demo</span>
 </mat-toolbar>
-<mat-drawer-container class="c-drawer-container">
-  <mat-drawer mode="side" opened>
+<mat-sidenav-container class="c-sidenav-container">
+  <mat-sidenav mode="over">
     <mat-list>
       <mat-list-item>
-        <a class="c-drawer__link" href="https://github.com/alexiscv55/users-demo" target="_blank">
+        <a class="c-sidenav__link" href="https://github.com/alexiscv55/users-demo" target="_blank">
           Source Code
         </a>
       </mat-list-item>
       <mat-list-item>
-        <a class="c-drawer__link" href="https://my-json-server.typicode.com/alexiscv55/users-mock" target="_blank">
+        <a class="c-sidenav__link" href="https://my-json-server.typicode.com/alexiscv55/users-mock" target="_blank">
           Mocked API
         </a>
       </mat-list-item>
       <mat-list-item>
-        <a class="c-drawer__link" href="https://raw.githubusercontent.com/alexiscv55/users-mock/master/users-mock.postman_collection.json" target="_blank">
+        <a class="c-sidenav__link" href="https://raw.githubusercontent.com/alexiscv55/users-mock/master/users-mock.postman_collection.json" target="_blank">
           Postman Collection
         </a>
       </mat-list-item>
     </mat-list>
-  </mat-drawer>
-  <mat-drawer-content class="c-drawer-content">
+  </mat-sidenav>
+  <mat-sidenav-content class="c-sidenav-content">
     <router-outlet></router-outlet>
-  </mat-drawer-content>
-</mat-drawer-container>
+  </mat-sidenav-content>
+</mat-sidenav-container>

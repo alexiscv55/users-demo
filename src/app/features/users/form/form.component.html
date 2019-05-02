@@ -1,0 +1,67 @@
+<mat-form-field class="c-form__field">
+  <input matInput required placeholder="Name" [formControl]="form.get('name')">
+  <mat-error *ngIf="form.get('name').hasError('required')">
+    Required field
+  </mat-error>
+</mat-form-field>
+
+<mat-form-field class="c-form__field">
+  <input matInput required placeholder="Email" [formControl]="form.get('email')">
+  <mat-error *ngIf="form.get('email').hasError('email')">
+    Invalid email
+  </mat-error>
+  <mat-error *ngIf="form.get('email').hasError('required')">
+    Required field
+  </mat-error>
+</mat-form-field>
+
+<mat-form-field class="c-form__field">
+  <input matInput required [matDatepicker]="birthDatePicker" placeholder="Birth date" [formControl]="form.get('birthDate')">
+  <mat-datepicker-toggle matSuffix [for]="birthDatePicker"></mat-datepicker-toggle>
+  <mat-datepicker #birthDatePicker startView="multi-year"></mat-datepicker>
+  <mat-error *ngIf="form.get('birthDate').hasError('required')">
+    Required field
+  </mat-error>
+</mat-form-field>
+
+<mat-form-field class="c-form__field c-form__field--long">
+  <input matInput required placeholder="Address" [formControl]="form.get(['address', 'street'])">
+  <mat-error *ngIf="form.get(['address', 'street']).hasError('required')">
+    Required field
+  </mat-error>
+</mat-form-field>
+
+<mat-form-field class="c-form__field">
+  <input matInput required placeholder="City" [formControl]="form.get(['address', 'city'])">
+  <mat-error *ngIf="form.get(['address', 'city']).hasError('required')">
+    Required field
+  </mat-error>
+</mat-form-field>
+
+<mat-form-field class="c-form__field">
+  <input matInput required placeholder="Zip code" [formControl]="form.get(['address', 'zip'])">
+  <mat-error *ngIf="form.get(['address', 'zip']).hasError('pattern')">
+    Invalid code
+  </mat-error>
+  <mat-error *ngIf="form.get(['address', 'zip']).hasError('required')">
+    Required field
+  </mat-error>
+</mat-form-field>
+
+<mat-form-field class="c-form__field">
+  <mat-select required placeholder="State" [formControl]="form.get(['address', 'state'])">
+    <mat-option *ngFor="let state of states" [value]="state.code">
+      {{ state.name }}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="form.get(['address', 'state']).hasError('required')">
+    Required field
+  </mat-error>
+</mat-form-field>
+
+<mat-form-field class="c-form__field">
+    <input matInput required readonly placeholder="Country" [formControl]="form.get(['address', 'country'])">
+    <mat-error *ngIf="form.get(['address', 'country']).hasError('required')">
+      Required field
+    </mat-error>
+</mat-form-field>

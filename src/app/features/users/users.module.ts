@@ -4,8 +4,9 @@ import { CommonModule } from '@angular/common';
 import { UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './users.component';
 
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatCardModule} from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material/button';
+import { PipesModule } from 'src/app/shared/pipes/pipes.module';
 
 @NgModule({
   declarations: [UsersComponent],
@@ -13,7 +14,9 @@ import {MatCardModule} from '@angular/material/card';
     CommonModule,
     UsersRoutingModule,
     MatExpansionModule,
-    MatCardModule
-  ]
+    MatButtonModule,
+    PipesModule
+  ],
+  providers: [ ]
 })
 export class UsersModule { }

@@ -1,2 +1,17 @@
+@import '~@angular/material/theming';
+
+$primary: mat-palette($mat-pink);
+$warn: mat-palette($mat-red);
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.success-snackbar {
+  background-color: mat-color($primary);
+  color: #fff;
+}
+
+.error-snackbar {
+  background-color: mat-color($warn);
+  color: #fff;
+}

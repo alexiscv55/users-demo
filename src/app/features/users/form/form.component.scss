@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.c-form__field {
+  padding: 0.75rem 1.5rem 0 0;
+
+  &--long {
+    flex-grow: 2;
+  }
+}
+
