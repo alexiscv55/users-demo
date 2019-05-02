@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { UsersService } from 'src/app/shared/services/users.service';
 import { FormComponent } from '../form.component';
 
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Component({
@@ -28,9 +28,7 @@ export class NewComponent {
         this.snackBar.open(`Successfully created with id ${res.id}`, 'Ok', { duration: 10000, panelClass: 'success-snackbar' });
         this.router.navigate(['../../']);
        },
-       err => {
-        this.snackBar.open(`There's been an error`, 'Ok', { duration: 10000, panelClass: 'error-snackbar' });
-       }
+       err => this.snackBar.open(`There's been an error`, 'Ok', { duration: 10000, panelClass: 'error-snackbar' })
      );
    }
   }

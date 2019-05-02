@@ -1,9 +1,9 @@
 <h1>Users</h1>
 
-<a mat-raised-button color="primary" class="c-users__new-button" routerLink="./new">Add new user</a>
+<a mat-raised-button color="primary" class="c-users__new-button" routerLink="new">Add new user</a>
 
 <mat-accordion>
-  <mat-expansion-panel *ngFor="let user of users | async">
+  <mat-expansion-panel *ngFor="let user of users$ | async">
     <mat-expansion-panel-header>
       <mat-panel-title>
         {{ user.name }} <{{user.email}}>
@@ -15,5 +15,6 @@
     <p>Zip code: {{user.address.zip}}</p>
     <p *ngIf="user.address.state">State: {{ user.address.state | state }}</p>
     <p>Country: {{user.address.country}}</p>
+    <a mat-raised-button color="accent" [routerLink]="['edit', user.id]">Edit</a>
   </mat-expansion-panel>
 </mat-accordion>

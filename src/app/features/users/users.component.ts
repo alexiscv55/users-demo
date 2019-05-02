@@ -8,7 +8,7 @@ import { UsersService } from 'src/app/shared/services/users.service';
 })
 export class UsersComponent {
 
-  protected users = this.usersService.getUsers();
+  protected users$ = this.usersService.getUsers();
 
   constructor(private readonly usersService: UsersService) { }
 
