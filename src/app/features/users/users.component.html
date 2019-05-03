@@ -4,27 +4,29 @@
   <mat-icon>add_circle_outline</mat-icon> Add new user
 </a>
 
-<mat-accordion>
-  <mat-expansion-panel *ngFor="let user of users$ | async">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        {{ user.name }} <{{user.email}}>
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>Birth date: {{user.birthDate | date: 'd/M/yyyy' }}</p>
-    <p>Address: {{user.address.street}}</p>
-    <p>City: {{user.address.city}}</p>
-    <p>Zip code: {{user.address.zip}}</p>
-    <p *ngIf="user.address.state">State: {{ user.address.state | state }}</p>
-    <p>Country: {{user.address.country}}</p>
-    <a mat-stroked-button class="c-users__button" [routerLink]="['edit', user.id]">
-      <mat-icon>edit</mat-icon> Edit
-    </a>
-    <button mat-stroked-button class="c-users__button" (click)="openConfirmDialog(confirmDialog, user)">
-      <mat-icon>delete</mat-icon> Delete
-    </button>
-  </mat-expansion-panel>
-</mat-accordion>
+<div class="c-users__accordion-container">
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let user of users$ | async">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ user.name }} <{{user.email}}>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>Birth date: {{user.birthDate | date: 'd/M/yyyy' }}</p>
+      <p>Address: {{user.address.street}}</p>
+      <p>City: {{user.address.city}}</p>
+      <p>Zip code: {{user.address.zip}}</p>
+      <p *ngIf="user.address.state">State: {{ user.address.state | state }}</p>
+      <p>Country: {{user.address.country}}</p>
+      <a mat-stroked-button class="c-users__button" [routerLink]="['edit', user.id]">
+        <mat-icon>edit</mat-icon> Edit
+      </a>
+      <button mat-stroked-button class="c-users__button" (click)="openConfirmDialog(confirmDialog, user)">
+        <mat-icon>delete</mat-icon> Delete
+      </button>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
 
 <ng-template #confirmDialog let-data let-ref="dialogRef">
   <h2 mat-dialog-title>Caution!</h2>
